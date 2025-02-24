@@ -79,15 +79,18 @@ export const editarEmpresas = async (req, res) => {
 }
 
 export const filtrarEmpresasPorAnosTrayectoria = async (req, res) => {
-    try{
-        const {limite = 7, desde = 0, anosTrayectoria} = req.query
-        const query = {estado: true}
+    try {
+        const { limite = 7, desde = 0, anosTrayectoria } = req.query;
+        
+        const query = { estado: true };
+        if (anosTrayectoria) {
+            query.anosTrayectoria = anosTrayectoria;
+        }
         const [total, companies] = await Promise.all([
             Company.countDocuments(query),
             Company.find(query)
                 .skip(Number(desde))
                 .limit(Number(limite))
-                .params(String(anosTrayectoria))
         ])
 
         return res.status(200).json({
@@ -95,9 +98,9 @@ export const filtrarEmpresasPorAnosTrayectoria = async (req, res) => {
             total,
             companies
         })
-    }catch(err){
+    } catch (err) {
         return res.status(500).json({
-            success: false, 
+            success: false,
             message: "ERROR AL OBTENER LA EMPRESA",
             error: err.message
         })
