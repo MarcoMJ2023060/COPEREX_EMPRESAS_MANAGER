@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import Company from "./company.model.js";
+import ExcelJS from "exceljs";
 
 export const registroEmpresas = async (req, res) =>{
     try{
@@ -155,6 +156,62 @@ export const listadoEmpresasOrdenadoDesc = async (req, res) => {
             success: false,
             message: "ERROR AL OBTENER LAS EMPRESAS",
             error: err.message
+        });
+    }
+};
+
+export const listadoEmpresasExcel = async (req, res) => {
+    try {
+        const { limite = 5, desde = 0 } = req.query;
+        const query = { estado: true };
+
+        const [total, companies] = await Promise.all([
+            Company.countDocuments(query),
+            Company.find(query).skip(Number(desde)).limit(Number(limite))
+        ]);
+
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Empresas');
+
+        worksheet.columns = [
+            { header: 'Nombre de la Empresa', key: 'nombreEmpresa', width: 30 },
+            { header: 'Nivel de Impacto', key: 'nivelImpacto', width: 20 },
+            { header: 'Años de Trayectoria', key: 'anosTrayectoria', width: 20 },
+            { header: 'Categoría Empresarial', key: 'categoriaEmpresarial', width: 25 },
+            { header: 'Estado', key: 'estado', width: 15 },
+        ];
+
+        companies.forEach(empresa => {
+            worksheet.addRow({
+                nombreEmpresa: empresa.nombreEmpresa,
+                nivelImpacto: empresa.nivelImpacto,
+                anosTrayectoria: empresa.anosTrayectoria, // ¡Corrige el typo aquí! (anosTrayectoria vs. anosTrayectoria)
+                categoriaEmpresarial: empresa.categoriaEmpresarial,
+                estado: empresa.estado ? 'Activo' : 'Inactivo',
+            });
+        });
+
+        // Configura los headers ANTES de enviar la respuesta
+        res.setHeader(
+            'Content-Type',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        );
+        res.setHeader(
+            'Content-Disposition',
+            `attachment; filename=empresas.xlsx`
+        );
+
+        // Escribe el archivo en la respuesta
+        await workbook.xlsx.write(res);
+
+        // No uses res.end() o res.json() después de write()
+        return res; 
+
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "ERROR AL OBTENER LAS EMPRESAS",
+            error: err.message,
         });
     }
 };

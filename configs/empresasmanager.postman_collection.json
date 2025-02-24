@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "0620a666-a054-424b-b098-af942582a56a",
+		"name": "empresasmanager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42000110"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "REGISTRAR ADMINISTRADORES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Marco\",\r\n    \"surname\":\"Bolanos\",\r\n    \"username\":\"mbolanos\",\r\n    \"email\":\"mbolanos@gmail.com\",\r\n    \"password\":\"Mypass1@\",\r\n    \"role\":\"ADMINISTRADOR_ROL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/auth/registerusers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"auth",
+								"registerusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INICIO SESION ADMINS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mbolanos@gmail.com\",\r\n    \"username\":\"mbolanos\",\r\n    \"password\":\"Mypass1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "FORMULARIO EMPRESAS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nivelImpacto\":\"Recaudacion\",\r\n    \"anosTrayectoria\":\"8\",\r\n    \"categoriaEmpresarial\":\"Privada\",\r\n    \"nombreEmpresa\":\"Light Gaming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/registerCompany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"registerCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTADO EMPRESAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/listCompanies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"listCompanies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR EMPRESAS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreEmpresa\":\"Luz Gaming\",\r\n    \"nivelImpacto\":\"Recaudacion\",\r\n    \"anosTrayectoria\":\"9\",\r\n    \"categoriaEmpresarial\":\"Sociedad Anonima\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/editCompany/67bccd16027056029ea41410",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"editCompany",
+								"67bccd16027056029ea41410"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTRAR POR AÑOS DE TRAYECTORIA",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/filterbyyearsofexperience?anosTrayectoria=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"filterbyyearsofexperience"
+							],
+							"query": [
+								{
+									"key": "anosTrayectoria",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTADO A-Z",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/listadoA-Z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"listadoA-Z"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LISTADO Z-A",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/listadoZ-A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"listadoZ-A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GENERAR LISTADO EMPRESAS EXCEL",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
