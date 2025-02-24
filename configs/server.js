@@ -5,7 +5,8 @@ import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
 import {dbConnection} from "./mongo.js"
-//import apiLimiter from "../src/middlewares/validar-cantidad-peticiones.js"
+import authroutes from "../src/auth/auth.routes.js"
+import apiLimiter from "../src/middlewares/validar-cantidad-peticiones.js"
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}))
@@ -13,7 +14,11 @@ const middlewares = (app) =>{
     app.use(cors())
     app.use(helmet())
     app.use(morgan("dev"))
-    //app.use(apiLimiter)
+    app.use(apiLimiter)
+}
+
+const routes = (app) =>{
+    app.use("/empresasManager/v1/auth", authroutes)
 }
 
 const conectarDB = async () =>{
@@ -30,7 +35,7 @@ export const inicioServidor = () =>{
     try{
         middlewares(app)
         conectarDB()
-        //routes(app)
+        routes(app)
         app.listen(process.env.PORT)
         console.log(`SERVER CORRIENDO EN EL PUERTO ${process.env.PORT}`)
     }catch(err){
