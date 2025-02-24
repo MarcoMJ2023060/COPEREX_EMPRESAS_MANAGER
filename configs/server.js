@@ -6,6 +6,7 @@ import helmet from "helmet"
 import morgan from "morgan"
 import {dbConnection} from "./mongo.js"
 import authroutes from "../src/auth/auth.routes.js"
+import companyroutes from "../src/company/company.routes.js"
 import apiLimiter from "../src/middlewares/validar-cantidad-peticiones.js"
 
 const middlewares = (app) =>{
@@ -19,6 +20,7 @@ const middlewares = (app) =>{
 
 const routes = (app) =>{
     app.use("/empresasManager/v1/auth", authroutes)
+    app.use("/empresasManager/v1/company", companyroutes)
 }
 
 const conectarDB = async () =>{
