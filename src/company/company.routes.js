@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { registroEmpresasValidator } from "../middlewares/validadores.js";
 import { deleteFileOnError } from "../middlewares/delete-file-on-errors.js";
-import { editarEmpresas, filtrarEmpresasPorAnosTrayectoria, listadoEmpresas, listadoEmpresasOrdenado, listadoEmpresasOrdenadoDesc, registroEmpresas } from "./company.controller.js";
+import { editarEmpresas, filtrarEmpresasPorAnosTrayectoria, listadoEmpresas, listadoEmpresasExcel, listadoEmpresasOrdenado, listadoEmpresasOrdenadoDesc, registroEmpresas } from "./company.controller.js";
 
 const router = Router()
 
@@ -15,6 +15,9 @@ router.post(
 
 //LISTADO DE EMPRESAS
 router.get("/listCompanies", listadoEmpresas)
+
+//LISTADO DE EMPRESAS POR EXCEL
+router.get("/listCompaniesExcel", listadoEmpresasExcel)
 
 //EDITAR EMPRESA
 router.put("/editCompany/:uid", editarEmpresas)
