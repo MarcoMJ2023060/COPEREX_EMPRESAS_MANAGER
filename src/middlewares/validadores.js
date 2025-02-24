@@ -32,3 +32,11 @@ export const loginValidator = [
     body("password").isLength({min:8}).withMessage("LA CONTRASEÑA DEBE CONTENER AL MENOS 8 CARACTERES"),
     validarCampos
 ]
+
+export const registroEmpresasValidator = [
+    body("nombreEmpresa").not().isEmpty().withMessage("El nombre de la empresa es requerido"),
+    body("nivelImpacto").not().isEmpty().withMessage("Los años de impactoson requeridos"),
+    body("anosTrayectoria").not().isEmpty().withMessage("Los años de trayectoria son requeridos"),
+    body("categoriaEmpresarial").not().isEmpty().withMessage("La categoria es requerida"),
+    validarCampos
+]
