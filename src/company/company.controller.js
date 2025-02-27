@@ -25,7 +25,7 @@ export const registroEmpresas = async (req, res) =>{
 
 export const listadoEmpresas = async (req, res) =>{
     try{
-        const {limite = 5, desde = 0} = req.query
+        const {limite = 10, desde = 0} = req.query
         const query = {estado: true}
         const [total, companies] = await Promise.all([
             Company.countDocuments(query),
@@ -162,7 +162,7 @@ export const listadoEmpresasOrdenadoDesc = async (req, res) => {
 
 export const listadoEmpresasExcel = async (req, res) => {
     try {
-        const { limite = 5, desde = 0 } = req.query;
+        const { limite = 10, desde = 0 } = req.query;
         const query = { estado: true };
 
         const [total, companies] = await Promise.all([
