@@ -8,6 +8,7 @@ import {dbConnection} from "./mongo.js"
 import authroutes from "../src/auth/auth.routes.js"
 import companyroutes from "../src/company/company.routes.js"
 import apiLimiter from "../src/middlewares/validar-cantidad-peticiones.js"
+import {swaggerDocs, swaggerUi} from "./swagger.js"
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}))
@@ -21,6 +22,7 @@ const middlewares = (app) =>{
 const routes = (app) =>{
     app.use("/empresasManager/v1/auth", authroutes)
     app.use("/empresasManager/v1/company", companyroutes)
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
 const conectarDB = async () =>{
