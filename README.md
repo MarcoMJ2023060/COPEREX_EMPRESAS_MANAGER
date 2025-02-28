@@ -156,8 +156,8 @@ Sigue estos pasos para configurar el proyecto localmente:
   - 👨🏻‍💼 **Desarrollador principal**: 👨🏻‍💼  
  [MARCO](https://github.com/MarcoMJ2023060)
 
-- 📱 **Redes Sociales**: 📱
--  𝗙𝗼𝗹𝗹𝗼𝘄 𝗺𝗲╰┈➤
-  [𝕏 Twitter](https://twitter.com/pg16_16_)  
-  [𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 Instagram](https://instagram.com/in/pg16_16_)
-  [ⓕ Facebook](https://facebook.com/in/MarcoMartinez)
+## 📱 **Redes Sociales**: 📱
+- **📍 Sígueme**
+╰┈➤ [𝕏 Twitter](https://twitter.com/pg16_16_)  
+╰┈➤ [📸 Instagram](https://instagram.com/pg16_16_)  
+╰┈➤ [ⓕ Facebook](https://facebook.com/MarcoMartinez)  
