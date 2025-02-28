@@ -1,7 +1,7 @@
-# COPEREX_EMPRESAS_MANAGER
+# 🏢 COPEREX_EMPRESAS_MANAGER 🏢
 ESTA API ESTA DISEÑADA PARA GESTIONAR EMPRESAS Y CLIENTES QUE DESEEN PARTICIPAR EN INTERFER
 
-## VARIABLES DE ENTORNO
+## 🔑 VARIABLES DE ENTORNO 🔑
 
 CREE UN ARCHIVO `.env` EN EL DIRECTORIO RAIZ Y AÑADA LAS SIGUIENTES VARIABLES:
 
@@ -11,9 +11,41 @@ PORT=<tu_puerto_del_servidor>
 JWT_SECRET=<tu_secreto_jwt>
 ```
 
-## ENDPOINTS DE LA API
+## 🚀 PRERREQUISITOS 🚀
 
-- **REGISTRAR ADMINISTRADOR/ADMINISTRADORES**
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (v14+ recomendado)
+- [npm](https://www.npmjs.com/) (viene incluido con NodeJS)
+
+## 🔧 INSTALACIÓN 🔧
+
+Sigue estos pasos para configurar el proyecto localmente:
+
+1. **Crea una carpeta local** (donde quieras almacenar el proyecto)
+   ```cmd
+   mkdir nombre-carpeta  
+2. **Navega a la carpeta recién creada**
+    ```cmd
+   cd nombre-carpeta
+3. **Clona el repositorio**
+    ```cmd
+   git clone <ENLAREREPOSITORIODEGITHUB>
+4. **Accede al directorio del proyecto clonado**
+   ```cmd
+   cd nombre-del-proyecto
+5. **Abrir codigo fuente del proyecto clonado, dentro del directorio ejecutar el comando**
+   ```cmd
+   code .
+6. **Instala las dependencias**
+    ```cmd
+   npm i
+7. **Iniciar proyecto en modo desarrollo**
+    ```cmd
+    npm run dev
+
+## 🌐 ENDPOINTS DE LA API 🌐
+
+- 📝 **REGISTRAR ADMINISTRADOR/ADMINISTRADORES** 📝
   - **URL:** `/empresasManager/v1/auth/registerusers`
   - **Método:** `POST`
   - **Cuerpo:**
@@ -28,7 +60,7 @@ JWT_SECRET=<tu_secreto_jwt>
     }
     ```
 
-     - **INICIO SESION**
+     - 🔓 **INICIO SESION** 🔓
   - **URL:** `/empresasManager/v1/auth/login`
   - **Método:** `POST`
   - **Cuerpo:**
@@ -40,9 +72,9 @@ JWT_SECRET=<tu_secreto_jwt>
     }
     ```
 
-     ### EMPRESAS
+     ### 💼 EMPRESAS 💼
 
-    - **FORMULARIO EMPRESAS**
+    - 📋 **FORMULARIO EMPRESAS** 📋
   - **URL:** `/empresasManager/v1/company/registerCompany`
   - **Método:** `POST`
  - **Cuerpo:**
@@ -55,11 +87,11 @@ JWT_SECRET=<tu_secreto_jwt>
     }
     ```
 
-    - **LISTADO EMPRESAS**
+    - ➤ **LISTADO EMPRESAS** ➤
   - **URL:** `/empresasManager/v1/company/listCompanies`
   - **Método:** `GET`
 
-    - **EDITAR EMPRESAS**
+    - ✏️ **EDITAR EMPRESAS** ✏️
   - **URL:** `/empresasManager/v1/company/editCompany/:uid`
   - **Método:** `PUT`
   - **Cuerpo:**
@@ -72,21 +104,21 @@ JWT_SECRET=<tu_secreto_jwt>
     }
     ```
 
-  - **FILTRAR POR AÑOS DE TRAYECTORIA**
+  -  🔎 **FILTRAR POR AÑOS DE TRAYECTORIA** 🔍
   - **URL:** `/empresasManager/v1/company/filterbyyearsofexperience`
   - **Método:** `GET`
    - **PARAMS:**
    ![image](https://github.com/user-attachments/assets/66b60e01-fb33-47eb-a72a-545bfc9b840d)
  
-  - **LISTADO A-Z**
+  - ☰𝓐 **LISTADO A-Z** 𝐙☰
   - **URL:** `/empresasManager/v1/company/listadoA-Z`
   - **Método:** `GET`
 
-    - **LISTADO Z-A**
+    - ☰☡ **LISTADO Z-A** 𝐀☰
   - **URL:** `/empresasManager/v1/company/listadoZ-A`
   - **Método:** `GET`
 
-  - **LISTADO EMPRESAS EN EXCEL**
+  - 𝄜👉 **LISTADO EMPRESAS EN EXCEL** 👈𝄜
   - **URL:** `/empresasManager/v1/company/listCompaniesExcel`
   - **Método:** `GET`
   - LISTA TODO EL REGISTRO DEEMPRESAS EN NUESTRO EXCEL 
@@ -98,7 +130,7 @@ JWT_SECRET=<tu_secreto_jwt>
         -GUARDAR EN EL PROYECTO O DONDE GUSTES.
 
     
-        ## RUTAS GENERALES DE LA API
+        ## 🛣️🌐 RUTAS GENERALES DE LA API 🛣️🌐
   - **REGISTRAR ADMINISTRADOR/ADMINISTRADORES**
   - **URL:** `http://localhost:3001/empresasManager/v1/auth/registerusers`
   - **INICIO SESION ADMINS**
@@ -117,3 +149,15 @@ JWT_SECRET=<tu_secreto_jwt>
   - **URL:** `http://localhost:3001/empresasManager/v1/company/listadoZ-A`
   - **LISTADO EMPRESAS EN EXCEL**
   - **URL:** `http://localhost:3001/empresasManager/v1/company/listCompaniesExcel`
+
+  ## 📬 Contacto 📬
+  Si necesitas ayuda o tienes alguna pregunta sobre el proyecto, no dudes en contactarnos:
+
+  - 👨🏻‍💼 **Desarrollador principal**: 👨🏻‍💼  
+ [MARCO](https://github.com/MarcoMJ2023060)
+
+- 📱 **Redes Sociales**: 📱
+-  𝗙𝗼𝗹𝗹𝗼𝘄 𝗺𝗲╰┈➤
+  [𝕏 Twitter](https://twitter.com/pg16_16_)  
+  [𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 Instagram](https://instagram.com/in/pg16_16_)
+  [ⓕ Facebook](https://facebook.com/in/MarcoMartinez)
