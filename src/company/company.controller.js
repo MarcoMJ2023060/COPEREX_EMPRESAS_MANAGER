@@ -79,6 +79,7 @@ export const editarEmpresas = async (req, res) => {
     }
 }
 
+/*
 export const filtrarEmpresasPorAnosTrayectoria = async (req, res) => {
     try {
         const { limite = 7, desde = 0, anosTrayectoria } = req.query;
@@ -151,6 +152,50 @@ export const listadoEmpresasOrdenadoDesc = async (req, res) => {
             total,
             companies
         });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "ERROR AL OBTENER LAS EMPRESAS",
+            error: err.message
+        });
+    }
+};
+*/
+
+export const filtroEmpresas = async (req, res) => {
+    try {
+        const { limite = 10, desde = 0, anosTrayectoria, orden } = req.query;
+        
+        // Construir el query base
+        const query = { estado: true };
+
+        if (anosTrayectoria) {
+            query.anosTrayectoria = anosTrayectoria.toString();
+        }
+
+        // Determinar el ordenamiento
+        let sortOption = {};
+        if (orden === 'asc') {
+            sortOption = { categoriaEmpresarial: 1 };
+        } else if (orden === 'desc') {
+            sortOption = { categoriaEmpresarial: -1 };
+        }
+
+        // Ejecutar consultas en paralelo
+        const [total, companies] = await Promise.all([
+            Company.countDocuments(query),
+            Company.find(query)
+                .sort(sortOption)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        return res.status(200).json({
+            success: true,
+            total,
+            companies
+        });
+
     } catch (err) {
         return res.status(500).json({
             success: false,
