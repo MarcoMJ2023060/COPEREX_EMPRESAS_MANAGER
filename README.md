@@ -104,20 +104,15 @@ Sigue estos pasos para configurar el proyecto localmente:
     }
     ```
 
-  -  🔎 **FILTRAR POR AÑOS DE TRAYECTORIA** 🔍
-  - **URL:** `/empresasManager/v1/company/filterbyyearsofexperience`
+       - ✏️ **FILTRO EMPRESAS** ✏️
+  - **URL:** `/empresasManager/v1/company/filtroEmpresas`
   - **Método:** `GET`
-   - **PARAMS:**
-   ![image](https://github.com/user-attachments/assets/66b60e01-fb33-47eb-a72a-545bfc9b840d)
- 
-  - ☰𝓐 **LISTADO A-Z** 𝐙☰
-  - **URL:** `/empresasManager/v1/company/listadoA-Z`
-  - **Método:** `GET`
-
-    - ☰☡ **LISTADO Z-A** 𝐀☰
-  - **URL:** `/empresasManager/v1/company/listadoZ-A`
-  - **Método:** `GET`
-
+  - **PARAMETROS:**
+     - **URL:** `http://localhost:3001/empresasManager/v1/company/filtroEmpresas?anosTrayectoria=numero` BUSCA POR AÑOS DE TRAYECTORIA
+      - **URL:** `http://localhost:3001/empresasManager/v1/company/filtroEmpresas?orden=asc` BUSCA POR ORDEN A-Z
+      - **URL:** `http://localhost:3001/empresasManager/v1/company/filtroEmpresas?orden=desc` BUSCA POR ORDEN Z-A
+    ```
+    
   - 𝄜👉 **LISTADO EMPRESAS EN EXCEL** 👈𝄜
   - **URL:** `/empresasManager/v1/company/listCompaniesExcel`
   - **Método:** `GET`
@@ -141,14 +136,10 @@ Sigue estos pasos para configurar el proyecto localmente:
   - **URL:** `http://localhost:3001/empresasManager/v1/company/listCompanies`
   - **EDITAR EMPRESAS**
   - **URL:** `http://localhost:3001/empresasManager/v1/company/editCompany/:uid`
-  - **FILTRAR POR AÑOS DE TRAYECTORIA**
-  - **URL:** `http://localhost:3001/empresasManager/v1/company/filterbyyearsofexperience`
-  - **LISTADO A-Z**
-  - **URL:** `http://localhost:3001/empresasManager/v1/company/listadoA-Z`
-  - **LISTADO Z-A**
-  - **URL:** `http://localhost:3001/empresasManager/v1/company/listadoZ-A`
   - **LISTADO EMPRESAS EN EXCEL**
   - **URL:** `http://localhost:3001/empresasManager/v1/company/listCompaniesExcel`
+  - **FILTRO EMPRESAS**
+  - **URL:** `http://localhost:3001/empresasManager/v1/company/filtroEmpresas`
 
   ## 📬 Contacto 📬
   Si necesitas ayuda o tienes alguna pregunta sobre el proyecto, no dudes en contactarnos:
