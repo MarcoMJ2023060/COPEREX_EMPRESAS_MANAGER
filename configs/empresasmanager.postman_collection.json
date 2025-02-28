@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nivelImpacto\":\"Recaudacion\",\r\n    \"anosTrayectoria\":\"8\",\r\n    \"categoriaEmpresarial\":\"Privada\",\r\n    \"nombreEmpresa\":\"Light Gaming\"\r\n}",
+							"raw": "{\r\n    \"nivelImpacto\":\"3 estrellas\",\r\n    \"anosTrayectoria\":\"18\",\r\n    \"categoriaEmpresarial\":\"Privada\",\r\n    \"nombreEmpresa\":\"God Of War Gaming\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,7 +136,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombreEmpresa\":\"Luz Gaming\",\r\n    \"nivelImpacto\":\"Recaudacion\",\r\n    \"anosTrayectoria\":\"9\",\r\n    \"categoriaEmpresarial\":\"Sociedad Anonima\"\r\n}",
+							"raw": "{\r\n    \"nombreEmpresa\":\"Gof Of War Gaming\",\r\n    \"nivelImpacto\":\"3 estrellas\",\r\n    \"anosTrayectoria\":\"18\",\r\n    \"categoriaEmpresarial\":\"S.A.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -144,7 +144,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/empresasManager/v1/company/editCompany/67bccd16027056029ea41410",
+							"raw": "http://localhost:3001/empresasManager/v1/company/editCompany/67c09d6a7a9853704617990c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -155,91 +155,7 @@
 								"v1",
 								"company",
 								"editCompany",
-								"67bccd16027056029ea41410"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "FILTRAR POR AÑOS DE TRAYECTORIA",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3001/empresasManager/v1/company/filterbyyearsofexperience?anosTrayectoria=9",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"empresasManager",
-								"v1",
-								"company",
-								"filterbyyearsofexperience"
-							],
-							"query": [
-								{
-									"key": "anosTrayectoria",
-									"value": "9"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "LISTADO A-Z",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/empresasManager/v1/company/listadoA-Z",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"empresasManager",
-								"v1",
-								"company",
-								"listadoA-Z"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "LISTADO Z-A",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3001/empresasManager/v1/company/listadoZ-A",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3001",
-							"path": [
-								"empresasManager",
-								"v1",
-								"company",
-								"listadoZ-A"
+								"67c09d6a7a9853704617990c"
 							]
 						}
 					},
@@ -249,7 +165,57 @@
 					"name": "GENERAR LISTADO EMPRESAS EXCEL",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/listCompaniesExcel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"listCompaniesExcel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTRAR EMPRESAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/empresasManager/v1/company/filtroEmpresas?anosTrayectoria=7&orden=asc&=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"empresasManager",
+								"v1",
+								"company",
+								"filtroEmpresas"
+							],
+							"query": [
+								{
+									"key": "anosTrayectoria",
+									"value": "7"
+								},
+								{
+									"key": "orden",
+									"value": "asc"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				}

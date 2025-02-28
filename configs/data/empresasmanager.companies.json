@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "67bc9e8c5e396268757db5d9"
+  },
+  "nivelImpacto": "Recaudacion",
+  "anosTrayectoria": "4",
+  "categoriaEmpresarial": "Publica",
+  "estado": true,
+  "__v": 0,
+  "nombreEmpresa": "Sands Gaming"
+},
+{
+  "_id": {
+    "$oid": "67bc9ef702698ed8cdfb21a2"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "5",
+  "categoriaEmpresarial": "Privada",
+  "nombreEmpresa": "Solus Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bc9f1102698ed8cdfb21a4"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "2",
+  "categoriaEmpresarial": "Privada",
+  "nombreEmpresa": "Mobile Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bc9f2402698ed8cdfb21a6"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "1",
+  "categoriaEmpresarial": "Privada",
+  "nombreEmpresa": "Garland Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bc9f4002698ed8cdfb21a8"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "7",
+  "categoriaEmpresarial": "Privada",
+  "nombreEmpresa": "Marco´s Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bcad76afe176c26b67980a"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "7",
+  "categoriaEmpresarial": "Casual",
+  "nombreEmpresa": "Juan´s Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67bcaf7d87eec9bf0537df2f"
+  },
+  "nivelImpacto": "Economico",
+  "anosTrayectoria": "10",
+  "categoriaEmpresarial": "Casual",
+  "nombreEmpresa": "Juan´s Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c09b76a7317ce28a26e5ef"
+  },
+  "nivelImpacto": "4 estrellas",
+  "anosTrayectoria": "20",
+  "categoriaEmpresarial": "S.A.",
+  "nombreEmpresa": "Dark souls Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c09d277a98537046179906"
+  },
+  "nivelImpacto": "5 estrellas",
+  "anosTrayectoria": "15",
+  "categoriaEmpresarial": "Privada",
+  "nombreEmpresa": "Dark Souls Gaming",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c09d6a7a9853704617990c"
+  },
+  "nivelImpacto": "3 estrellas",
+  "anosTrayectoria": "18",
+  "categoriaEmpresarial": "S.A.",
+  "nombreEmpresa": "Gof Of War Gaming",
+  "estado": true,
+  "__v": 0
+}]

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { registroEmpresasValidator } from "../middlewares/validadores.js";
 import { deleteFileOnError } from "../middlewares/delete-file-on-errors.js";
-import { editarEmpresas, filtrarEmpresasPorAnosTrayectoria, listadoEmpresas, listadoEmpresasExcel, listadoEmpresasOrdenado, listadoEmpresasOrdenadoDesc, registroEmpresas } from "./company.controller.js";
+import { editarEmpresas, filtroEmpresas, listadoEmpresas, listadoEmpresasExcel,  registroEmpresas } from "./company.controller.js";
 
 const router = Router()
 
@@ -128,7 +128,7 @@ router.put("/editCompany/:uid", editarEmpresas)
  *         description: Error interno del servidor
  */
 //FILTRAR POR AÑOS DE TRAYECTORIA
-router.get('/filterbyyearsofexperience', filtrarEmpresasPorAnosTrayectoria);
+//router.get('/filterbyyearsofexperience', filtrarEmpresasPorAnosTrayectoria);
 
 /**
  * @swagger
@@ -143,7 +143,7 @@ router.get('/filterbyyearsofexperience', filtrarEmpresasPorAnosTrayectoria);
  *         description: Error interno del servidor
  */
 //FILTRAR A-Z
-router.get("/listadoA-Z", listadoEmpresasOrdenado)
+//router.get("/listadoA-Z", listadoEmpresasOrdenado)
 
 /**
  * @swagger
@@ -158,6 +158,9 @@ router.get("/listadoA-Z", listadoEmpresasOrdenado)
  *         description: Error interno del servidor
  */
 //FILTRAR Z-A
-router.get("/listadoZ-A", listadoEmpresasOrdenadoDesc)
+//router.get("/listadoZ-A", listadoEmpresasOrdenadoDesc)
+
+//FILTRO EMPRESAS POR 3 DISTINTOS PARAMETROS
+router.get("/filtroEmpresas", filtroEmpresas)
 
 export default router
