@@ -89,6 +89,7 @@ JWT_SECRET=<tu_secreto_jwt>
   - **LISTADO EMPRESAS EN EXCEL**
   - **URL:** `/empresasManager/v1/company/listCompaniesExcel`
   - **Método:** `GET`
+  - LISTA TODO EL REGISTRO DEEMPRESAS EN NUESTRO EXCEL 
    - GUARDAR LA RESPUESTA DEL ENDPOINT EN UN ARCHIVO Y PONERLE ".xlsx"
    -  ![image](https://github.com/user-attachments/assets/92243472-1b96-4f5a-af57-caa1bc014077)
      - SAVE RESPONDE TO FILE
